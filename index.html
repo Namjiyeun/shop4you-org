@@ -1,0 +1,209 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex"><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style></head><body><title>샵포유 조직도</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap">
+<style>
+/* Layout: 상단 바 → 팀장 소개 카드(큰 글씨) → 팀별 직원 카드 → 일하는 순서 단계 → 약속. 회색 바탕 위 흰 카드, 업무 현황판과 같은 토큰 */
+:root{
+  --bg:#f2f4f6; --surface:#ffffff; --sunk:#f2f4f6; --line:#e5e8eb;
+  --fg:#191f28; --sub:#4e5968; --muted:#8b95a1;
+  --accent:#2f6cf6; --accent-soft:#e8f0fe;
+  --hot:#f0466e; --hot-soft:#ffe9ee;
+  --rep:#2f6cf6; --rep-soft:#e8f0fe;
+  --sup:#e8730c; --sup-soft:#fff1e3;
+  --lead:#7b5cf0; --lead-soft:#f0ecff;
+  --shadow:0 1px 2px rgba(25,31,40,.04),0 6px 20px rgba(25,31,40,.06);
+  --r-lg:20px; --r-md:14px;
+  --f-body:"Noto Sans KR",system-ui,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#101318; --surface:#1b1f26; --sunk:#232830; --line:#2c323b;
+  --fg:#f2f4f6; --sub:#c2c8d0; --muted:#8b95a1;
+  --accent:#5b8cff; --accent-soft:#1e2a45;
+  --hot:#ff6f8e; --hot-soft:#3b1d27;
+  --rep:#5b8cff; --rep-soft:#1e2a45;
+  --sup:#ffa04d; --sup-soft:#3a2a1a;
+  --lead:#a88dff; --lead-soft:#2a2347;
+  --shadow:0 1px 2px rgba(0,0,0,.4); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#101318; --surface:#1b1f26; --sunk:#232830; --line:#2c323b;
+  --fg:#f2f4f6; --sub:#c2c8d0; --muted:#8b95a1;
+  --accent:#5b8cff; --accent-soft:#1e2a45;
+  --hot:#ff6f8e; --hot-soft:#3b1d27;
+  --rep:#5b8cff; --rep-soft:#1e2a45;
+  --sup:#ffa04d; --sup-soft:#3a2a1a;
+  --lead:#a88dff; --lead-soft:#2a2347;
+  --shadow:0 1px 2px rgba(0,0,0,.4); color-scheme:dark}
+
+body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:15px;line-height:1.6;letter-spacing:-.01em;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding-block:8px 64px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+  display:grid;gap:28px}
+h1,h2,h3,p{margin:0}
+h1,h2,h3{letter-spacing:-.02em;text-wrap:balance}
+a:focus-visible{outline:3px solid color-mix(in srgb,var(--accent) 45%,transparent);outline-offset:2px}
+
+header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;padding-block:14px}
+header h1{font-size:20px;font-weight:800}
+header p{color:var(--muted);font-size:13px}
+.btn{display:inline-block;text-decoration:none;font-weight:700;font-size:14px;color:var(--accent);background:var(--accent-soft);border-radius:10px;padding:10px 16px}
+.btn:hover{filter:brightness(.97)}
+
+.lead-card{background:var(--surface);border-radius:var(--r-lg);box-shadow:var(--shadow);padding:28px;display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:center}
+.avatar{width:72px;height:72px;border-radius:24px;display:grid;place-items:center;font-size:28px;font-weight:800;color:var(--c);background:var(--cs);flex:none}
+.lead-card .avatar{--c:var(--lead);--cs:var(--lead-soft);width:96px;height:96px;border-radius:30px;font-size:38px}
+.eyebrow{display:inline-block;font-size:12px;font-weight:700;color:var(--lead);background:var(--lead-soft);border-radius:999px;padding:3px 10px}
+.lead-card h2{font-size:26px;font-weight:800;margin-top:8px}
+.lead-card blockquote{margin:10px 0 0;font-size:16px;color:var(--sub);max-width:58ch}
+.chain{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.chain span{font-size:13px;font-weight:500;color:var(--sub);background:var(--sunk);border-radius:999px;padding:5px 12px}
+.chain b{color:var(--fg)}
+
+.sec{display:grid;gap:14px}
+.sec-h{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;padding-inline:4px}
+.sec-h h2{font-size:20px;font-weight:800}
+.sec-h small{font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:12px}
+.grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.grid.four{grid-template-columns:repeat(4,minmax(0,1fr))}
+.staff{background:var(--surface);border-radius:var(--r-lg);box-shadow:var(--shadow);padding:20px;display:grid;gap:12px;align-content:start;min-width:0;transition:transform .12s}
+.staff:hover{transform:translateY(-2px)}
+.rep{--c:var(--rep);--cs:var(--rep-soft)}
+.sup{--c:var(--sup);--cs:var(--sup-soft)}
+.staff-top{display:flex;align-items:center;gap:12px}
+.staff-top .avatar{width:52px;height:52px;border-radius:18px;font-size:21px}
+.staff h3{font-size:18px;font-weight:800}
+.staff .role{font-size:13px;color:var(--c);font-weight:700}
+.staff ul{margin:0;padding:0;list-style:none;display:grid;gap:6px}
+.staff li{font-size:14px;color:var(--sub);display:flex;gap:8px}
+.staff li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--c);margin-top:9px;flex:none}
+.out{font-size:13px;font-weight:500;color:var(--fg);background:var(--sunk);border-radius:10px;padding:8px 12px}
+.out span{color:var(--muted);font-weight:400;margin-right:6px}
+
+.flow{background:var(--surface);border-radius:var(--r-lg);box-shadow:var(--shadow);padding:22px;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;list-style:none;margin:0;counter-reset:s}
+.flow li{counter-increment:s;display:grid;gap:6px;align-content:start;min-width:0}
+.flow li::before{content:counter(s);width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:14px;color:var(--accent);background:var(--accent-soft)}
+.flow li:last-child::before{color:#fff;background:var(--accent)}
+.flow b{font-size:15px;font-weight:800}
+.flow span{font-size:13px;color:var(--muted)}
+
+.promise{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.pr{background:var(--surface);border-radius:var(--r-lg);box-shadow:var(--shadow);padding:20px;display:grid;gap:6px}
+.pr b{font-size:16px;font-weight:800}
+.pr span{font-size:14px;color:var(--sub)}
+.pr.hot{background:var(--hot-soft)} .pr.hot b{color:var(--hot)}
+
+.ask{background:var(--fg);color:var(--surface);border-radius:var(--r-lg);padding:22px 24px;display:grid;gap:8px}
+.ask b{font-size:16px}
+.ask q{font-size:15px;opacity:.85;quotes:"“" "”"}
+.foot{font-size:12px;color:var(--muted);padding-inline:4px}
+
+@media (max-width:960px){
+  .grid.four{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .flow{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:18px}
+}
+@media (max-width:640px){
+  .lead-card{grid-template-columns:1fr;padding:22px}
+  .grid.three,.grid.four,.promise{grid-template-columns:1fr}
+  .flow{grid-template-columns:1fr 1fr}
+  .lead-card h2{font-size:22px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header>
+    <div>
+      <h1>샵포유 조직도</h1>
+      <p>희망리턴패키지 재기사업화 1회차 · 7개 업체 담당 가상 팀</p>
+    </div>
+    <a class="btn" href="https://claude.ai/artifact/G47B8cmyeAccHPhD7fzK4P" target="_blank" rel="noopener noreferrer">업무 현황판 열기</a>
+  </header>
+
+  <section class="lead-card" aria-label="팀장 소개">
+    <div class="avatar" aria-hidden="true">한</div>
+    <div>
+      <span class="eyebrow">팀장</span>
+      <h2>한실장</h2>
+      <blockquote>안녕하세요, 샵포유 팀장 한실장입니다. 남지연 PM님과 희망리턴 7개 업체를 챙기며, 일을 알맞은 동료에게 나누고 꼼꼼히 검수해 보고드립니다. 모르는 건 지어내지 않고, 마감까지 끝까지 함께하겠습니다.</blockquote>
+      <div class="chain"><span>보고 대상 <b>남지연 전담PM</b></span><span>함께하는 직원 <b>7명</b></span><span>주간 보고 <b>매주 월요일</b></span></div>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="repH">
+    <div class="sec-h"><h2 id="repH">보고서 담당</h2><small>3명</small></div>
+    <div class="grid three">
+      <article class="staff rep">
+        <div class="staff-top"><div class="avatar" aria-hidden="true">김</div><div><h3>김전략</h3><div class="role">이행전략</div></div></div>
+        <ul><li>이행전략보고서</li><li>전담PM 지원계획서</li></ul>
+        <div class="out"><span>결과물</span>항목별 글자수 맞춘 초안</div>
+      </article>
+      <article class="staff rep">
+        <div class="staff-top"><div class="avatar" aria-hidden="true">박</div><div><h3>박점검</h3><div class="role">모니터링</div></div></div>
+        <ul><li>회차별 모니터링보고서</li><li>보완 조치 내용 반영</li></ul>
+        <div class="out"><span>결과물</span>[서식21] hwpx</div>
+      </article>
+      <article class="staff rep">
+        <div class="staff-top"><div class="avatar" aria-hidden="true">최</div><div><h3>최완료</h3><div class="role">완료보고서</div></div></div>
+        <ul><li>[서식44] 완료보고서</li><li>업체별 완료기준 점검</li></ul>
+        <div class="out"><span>결과물</span>점검표, 초안</div>
+      </article>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="supH">
+    <div class="sec-h"><h2 id="supH">업무 지원 담당</h2><small>4명</small></div>
+    <div class="grid four">
+      <article class="staff sup">
+        <div class="staff-top"><div class="avatar" aria-hidden="true">이</div><div><h3>이보완</h3><div class="role">보완서류</div></div></div>
+        <ul><li>보완사항 정리</li><li>서류 점검</li><li>카톡 문구 초안</li></ul>
+        <div class="out"><span>결과물</span>보완 정리표</div>
+      </article>
+      <article class="staff sup">
+        <div class="staff-top"><div class="avatar" aria-hidden="true">정</div><div><h3>정일정</h3><div class="role">일정·업체 관리</div></div></div>
+        <ul><li>회차·방문 일정</li><li>마감 관리</li><li>주간 브리핑</li></ul>
+        <div class="out"><span>결과물</span>주간 일정표</div>
+      </article>
+      <article class="staff sup">
+        <div class="staff-top"><div class="avatar" aria-hidden="true">신</div><div><h3>신소식</h3><div class="role">지원사업 정보</div></div></div>
+        <ul><li>새 공고 수집</li><li>업체별 추천</li><li>2027 제안 사업</li></ul>
+        <div class="out"><span>결과물</span>매주 월 08시 후보 목록</div>
+      </article>
+      <article class="staff sup">
+        <div class="staff-top"><div class="avatar" aria-hidden="true">한</div><div><h3>한진단</h3><div class="role">경영진단</div></div></div>
+        <ul><li>상권·경쟁 분석</li><li>매출·완료기준 진단</li><li>마케팅 진단</li></ul>
+        <div class="out"><span>결과물</span>진단 메모</div>
+      </article>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="flowH">
+    <div class="sec-h"><h2 id="flowH">일하는 순서</h2></div>
+    <ol class="flow">
+      <li><b>요청</b><span>PM님이 한실장에게</span></li>
+      <li><b>배분</b><span>맞는 직원에게</span></li>
+      <li><b>작업</b><span>모르는 건 확인 필요로</span></li>
+      <li><b>검수</b><span>원자료와 대조</span></li>
+      <li><b>승인</b><span>PM님 확인</span></li>
+      <li><b>반영</b><span>현황판 업데이트</span></li>
+    </ol>
+  </section>
+
+  <section class="sec" aria-labelledby="prH">
+    <div class="sec-h"><h2 id="prH">팀의 약속</h2></div>
+    <div class="promise">
+      <div class="pr"><b>지어내지 않기</b><span>자료에 없는 내용은 '확인 필요'로 남깁니다.</span></div>
+      <div class="pr"><b>승인 후 반영</b><span>현황판은 PM님이 승인한 내용만 바꿉니다.</span></div>
+      <div class="pr hot"><b>연락은 초안까지</b><span>대표님께 드릴 말은 준비만 하고, 전달은 PM님이 합니다.</span></div>
+    </div>
+  </section>
+
+  <section class="ask" aria-label="부르는 법">
+    <b>이렇게 불러 주세요</b>
+    <q>한실장, 김양희 8회차 보고서랑 보완 카톡 문구 준비해줘</q>
+    <q>한실장, 이번 주 업무 보고해줘</q>
+  </section>
+
+  <p class="foot">협약종료 2026. 11. 13. · 새출발기금 연계 검증보고서 2026. 11. 18.</p>
+</div>
+</body></html>
